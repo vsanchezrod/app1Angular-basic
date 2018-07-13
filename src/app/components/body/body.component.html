@@ -1,0 +1,39 @@
+<!--Clases de bootstrap -->
+
+<div class="row">
+    <div class="col">
+        <h1>*ngIf</h1>
+        <!--hr es una linea -->
+        <hr>
+
+        <!--Card de Bootstrap -->
+        <!--Se utiliza *ngIf para poder ocultar o no la tarjeta 
+            * Si la condición lógica es FALSE el elemento no aparece, y si es TRUE aparece-->
+        <div *ngIf="mostrar" class="card text-white bg-primary mb-3" style="width: 100%">
+            <div class="card-body">
+                <h5 class="card-title"> {{ frase.autor }}</h5>
+                <p class="card-text"> {{ frase.mensaje }}</p>
+            </div>
+        </div>
+
+        <!-- Evento click para mostrar u ocultar la tarjeta-->
+        <button (click)="mostrar =!mostrar" class="btn btn-outline-primary btn-block">
+            Mostrar/Ocultar
+        </button>
+
+
+    </div>
+    <div class="col">
+        <h1>*ngFor</h1>
+        <!--hr es una linea -->
+        <hr>
+
+        <!-- List Group de Bootstrap -->
+        <ul class="list-group">
+            <!-- Se utiliza *ngFor para repetir el elemento li tantas veces como elementos tenga el array personajes 
+                * Cada personaje es un elemento del array de personajes
+                * Con let i = index se puede saber el índice del elemento-->
+            <li *ngFor="let personaje of personajes; let i = index" class="list-group-item"> {{ i + 1 }} - {{ personaje }} </li>
+        </ul>
+    </div>
+</div>
